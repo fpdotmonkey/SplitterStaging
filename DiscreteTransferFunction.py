@@ -64,7 +64,7 @@ class DiscreteTransferFunction(RingBuffer):
 
         return sum(coefficient * bufferValue
                    for (coefficient, bufferValue)
-                   in zip(reversed(coefficients[:-1]), self)) \
+                   in zip(reversed(coefficients[:-1]), reversed(self))) \
                + coefficients[-1]
 
     def __str__(self):

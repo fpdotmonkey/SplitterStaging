@@ -80,10 +80,9 @@ class TestDiscreteTransferFunction(unittest.TestCase):
     def testGetDatum_underFilledBuffer(self):
 
         tf = DiscreteTransferFunction(list(reversed(range(10))), [1])
-        tf.append(3)
-        tf.append(2)
         tf.append(1)
-        self.assertAlmostEqual(tf.get_datum(), 10,
+        tf.append(2)
+        self.assertAlmostEqual(tf.get_datum(), 4,
                                msg="Fails to return data using only "
                                    + "the lowest order coefficients")
 
